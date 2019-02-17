@@ -21,8 +21,13 @@ public class Course implements Serializable {
 	public Course(String name, int regCode, int maxNum) {
 		this.name = name;
 		this.regCode = regCode;
-		this.maxStudents = maxNum;
-		this.registered = new Student[maxNum];
+		if (maxNum > 0) {
+			this.maxStudents = maxNum;
+			this.registered = new Student[maxNum];
+		} else { // DEFAULT VALUE if user enters invalid argument
+			this.maxStudents = 35;
+			this.registered = new Student[35];
+		}
 	}
 	
 	public void setInstructor(Instructor teacher) {
@@ -128,5 +133,16 @@ public class Course implements Serializable {
 			}
 		}
 		return stringOfStudents;
+	}
+	
+	// additional helper function
+	public String viewCourse() {
+		String stringOfCourse = "";
+		stringOfCourse += "Course Name: " + this.name;
+		stringOfCourse += "\nCourse Code: " + this.regCode;
+		stringOfCourse += "\nMax Students: " + this.maxStudents;
+		stringOfCourse += "\nEnrolled: " + this.numStudents;
+		stringOfCourse += "\nInstructor: " + this.teacher + "\n\n";
+		return stringOfCourse;
 	}
 }
