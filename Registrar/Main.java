@@ -59,10 +59,10 @@ public class Main {
 		cA.removeStudent(stB);
 //		System.out.println(cA.getStudents());
 		cA.removeStudent(stB);
-//		System.out.println(cA.getStudents());
-//		cA.serialize("test.txt");
-//		String cB = cA.unserialize("test.txt");
-//		System.out.println(cB);
+		System.out.println("Course A before serialization: " + cA.getStudents());
+		cA.serialize("test.txt");
+		Course cB = cA.unserialize("test.txt");
+		System.out.println("Course B after unserialization" + cB.getStudents());
 	}
 
 }

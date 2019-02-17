@@ -1,6 +1,8 @@
 package Registrar;
 
-public class Student extends Person {
+import java.io.Serializable;
+
+public class Student extends Person implements Serializable {
 
 	private int studentId;
 	private int numberOfCredits;

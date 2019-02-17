@@ -9,8 +9,8 @@ class RecursiveSummation {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(recursiveSummation(5, 5)); // expect 5
-		System.out.println(recursiveSummation(1, 5)); // expect 15
+		System.out.println("From 5 to 5: " + recursiveSummation(5, 5)); // expect 5
+		System.out.println("From 1 to 5: " + recursiveSummation(1, 5)); // expect 15
 	}
 
 }

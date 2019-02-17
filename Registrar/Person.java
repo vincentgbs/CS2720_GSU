@@ -1,6 +1,8 @@
 package Registrar;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
 
 	protected String name;
 	protected int id;

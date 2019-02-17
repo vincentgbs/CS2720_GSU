@@ -2,7 +2,7 @@ package Registrar;
 
 import java.io.*;
 
-public class Course {
+public class Course implements Serializable {
 	
 	private String name;
 	private int regCode;
@@ -82,7 +82,7 @@ public class Course {
 			FileOutputStream file = new FileOutputStream(filename);
 			ObjectOutputStream out = new ObjectOutputStream(file);
 			// serialize the object
-			out.writeUTF(this.getName());
+			out.writeObject(this);
 			out.close(); 
 			file.close(); 
 		} catch (IOException e) {
@@ -90,21 +90,21 @@ public class Course {
 		}
 	}
 
-	public String unserialize(String filename) {
+	public Course unserialize(String filename) {
 		// A method that will allow Course objects to be read in from a file created with Object serialization
 		try
         {
             FileInputStream file = new FileInputStream(filename); 
             ObjectInputStream in = new ObjectInputStream(file);
             // unserialize the object
-            String ret = in.readUTF();
+            Course ret = (Course)in.readObject();
             in.close(); 
             file.close(); 
             return ret;
         } catch(IOException e) { 
             e.printStackTrace(); 
-//        } catch(ClassNotFoundException e) { 
-//        	e.printStackTrace(); 
+        } catch(ClassNotFoundException e) { 
+        	e.printStackTrace(); 
         }
 		return null;
 	}
