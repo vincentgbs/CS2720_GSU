@@ -142,7 +142,7 @@ public class Course implements Serializable {
 		stringOfCourse += "\nCourse Code: " + this.regCode;
 		stringOfCourse += "\nMax Students: " + this.maxStudents;
 		stringOfCourse += "\nEnrolled: " + this.numStudents;
-		stringOfCourse += "\nInstructor: " + this.teacher + "\n\n";
+		stringOfCourse += "\nInstructor: " + this.teacher + "\n";
 		return stringOfCourse;
 	}
 }
