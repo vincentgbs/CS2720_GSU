@@ -2,7 +2,7 @@ package Registrar;
 
 import java.io.Serializable;
 
-public class Person implements Serializable {
+public class Person {
 
 	protected String name;
 	protected int id;

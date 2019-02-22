@@ -2,7 +2,7 @@ package Registrar;
 
 import java.io.Serializable;
 
-public class Student extends Person implements Serializable {
+public class Student extends Person {
 
 	private int studentId;
 	private int numberOfCredits;

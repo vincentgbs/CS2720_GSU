@@ -154,13 +154,14 @@ public class Main {
 		System.out.println(cA.getStudents());
 		cA.removeStudent(stB); // should throw an error because Tony was already removed
 		System.out.println("Course A before serialization: \n" + cA.viewCourse());
-		cA.serialize("test.txt");
-		Course cB = cA.unserialize("test.txt");
-		System.out.println("Course B after unserialization: \n" + cB.viewCourse());
+		cA.serialize("serial.txt");
+		Course cB = cA.unserialize("serial.txt");
+		System.out.println("Course B (copy of A) after unserialization (from serial.txt): \n" + cB.viewCourse());
 	}
 	
 	public static void main(String[] args) {
-//		quickDemo();
+		quickDemo();
+		System.out.println("...Starting interactive demo...\n");
 		Main demo = new Main();
 		demo.addACourse(new Course("Math 101", 10113), new Instructor("Bruce Banner", 24680));
 		demo.addACourse(new Course("English 101", 1015), new Instructor("Shuri", 13579));
